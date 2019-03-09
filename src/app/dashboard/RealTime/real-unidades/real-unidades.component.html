@@ -1,0 +1,48 @@
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+
+  
+<app-header></app-header>
+{{websocket.lat}}
+<hr>  
+{{websocket.lng}}
+<form [formGroup] = "formGPS">
+  <div class="row justify-content-center" style="display: flex; height: 80vh;">
+    <div class="col-5" style="margin: auto;" >
+        <div class="row">
+            <label class="text-main">Añadir GPS</label>
+            <br>
+        </div>
+      <div class="inputs" >
+        <input type="number" placeholder="Latitud" formControlName="Latitud" >
+      </div>
+      <br>
+      <div class="inputs" >
+        <input type="number" placeholder="Longitud" formControlName="Longitud" >
+      </div>
+      <br>
+      <div class="inputs" >
+        <input type="tex" placeholder="Fecha" formControlName="Fecha" >
+      </div>
+      <br>
+      <div class="inputs" >
+        <input type="text" placeholder="Hora" formControlName="Hora" >
+      </div>
+      <div class="inputs" >
+        <input type="number" placeholder="Imei" formControlName="Imei" >
+      </div>
+      <br>
+      <div class="inputs" >
+        <input type="number" placeholder="Dispositivo" formControlName="Dispositivo" >
+      </div>
+    
+    <br>
+    <button type="submit" class="btn btn-dark"  (click)="addGPS()">Añadir</button>
+  </div>
+  </div>
+</form>
+<agm-map [latitude]="websocket.lat" [longitude]="websocket.lng">
+    
+    <agm-marker [latitude]="websocket.lat" [longitude]="websocket.lng"></agm-marker>
+  </agm-map>

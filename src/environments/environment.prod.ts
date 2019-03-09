@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  wsURL:'http://134.209.76.81:5010',
+  production: true,
+  
 };

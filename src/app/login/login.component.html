@@ -1,3 +1,19 @@
-<p>
-  login works!
-</p>
+<header class="p-2 bg-dark text-white text-right">
+  <span *ngIf="websocket.socketStatus"> Server status Si</span>
+  <span *ngIf="!websocket.socketStatus"> Server status No</span>
+</header>
+<form [formGroup] = "formLogin">
+  <div class="row">
+    <label for="" class="text-header">Login</label>
+    <br>
+    <div class="field-form" >
+      <input type="text" placeholder="username" formControlName="username" >
+    </div>
+    <br>
+    <div class="field-form">
+      <input type="password" placeholder="Password" formControlName="password" >
+    </div>
+    <br>
+    <button type="submit" (click)="sendLogin()">Login </button>
+  </div>
+</form>

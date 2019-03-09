@@ -1,0 +1,26 @@
+<app-header></app-header>
+<form [formGroup] = "formEquipos">
+  <div class="row justify-content-center" style="display: flex; height: 80vh;">
+          <div class="col-5" style="margin: auto;" >
+            <div class="row">
+              <label class="text-main">Añadir Equipo</label>
+              <br>
+            </div>
+            <div class="inputs" >
+              <input class="border border-dark" type="number" placeholder="Imei" formControlName="Imei" >
+            </div>
+            <div class="inputs" >
+              <input class="border border-dark" type="text" placeholder="Marca" formControlName="Marca" >
+            </div>
+            <div class="inputs" >
+              <input class="border border-dark" type="text" placeholder="Modelo" formControlName="Modelo" >
+            </div>
+            <div class="inputs" >
+              <input class="border border-dark" type="text" placeholder="Color" formControlName="Color" >
+            </div>
+            <br>
+            <button *ngIf="isAdd == true" class="btn btn-dark" type="submit" (click)="addEquipo()">Añadir</button>
+            <button *ngIf="isAdd == false" class="btn btn-dark" type="submit" (click)="editDevice()">Editar</button>
+          </div>
+        </div>
+</form>

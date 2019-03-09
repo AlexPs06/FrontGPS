@@ -1,0 +1,29 @@
+<app-header></app-header>
+<form [formGroup] = "formProfile">
+  <div class="row justify-content-center" style="display: flex; height: 80vh;">
+    <div class="col-5" style="margin: auto;" >
+      <div class="row">
+        <label class="text-main">Añadir profile</label>
+        <br>
+      </div>
+      <div class="inputs" >
+        <input class="border border-dark" type="number" placeholder="User" formControlName="User" >
+      </div>
+      <div class="inputs">
+        <input class="border border-dark" type="text" placeholder="Address" formControlName="Address" >
+      </div>
+      <div class="inputs">
+        <input class="border border-dark" type="email" placeholder="Email" formControlName="Email" >
+      </div>
+      <div class="inputs">
+        <input class="border border-dark" type="number" placeholder="Edad" formControlName="Edad" >
+      </div>
+      <div class="inputs">
+        <input class="border border-dark" type="number" placeholder="Phone" formControlName="Phone" >
+      </div>
+      <br>
+      <button *ngIf="value!='editar'" class="btn btn-dark" type="submit" (click)="addProfile()">Añadir</button>
+      <button *ngIf="value=='editar'" class="btn btn-dark"  type="submit" (click)="editarProfile()">Editar</button>
+    </div>
+  </div>
+</form>

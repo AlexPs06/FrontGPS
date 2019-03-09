@@ -1,0 +1,37 @@
+<app-header></app-header>
+<form [formGroup] = "formUnidades">
+  <div class="row justify-content-center" style="display: flex; height: 80vh;">
+      <div class="col-5" style="margin: auto;" >
+          <div class="row">
+            <label class="text-main">Añadir unidades</label>
+            <br>
+          </div>
+          <div class="inputs" >
+            <input type="text" placeholder="Placa" formControlName="Placa" >
+          </div>
+          <br>
+          <div class="inputs" >
+            <input type="text" placeholder="User" formControlName="User" >
+          </div>
+          <br>
+          <div class="inputs" >
+            <input type="text" placeholder="Marca" formControlName="Marca" >
+          </div>
+          <br>
+          <div class="inputs" >
+            <input type="text" placeholder="Modelo" formControlName="Modelo" >
+          </div>
+          <br>
+          <div class="inputs" >
+            <input type="text" placeholder="Dispositivo" formControlName="Dispositivo" >
+          </div>
+          <br>
+          <div class="inputs" >
+            <input type="text" placeholder="Imei" formControlName="Imei" >
+          </div>
+          <br>
+          <button *ngIf='unidad==undefined' class="btn btn-dark" type="submit" (click)="addUnidades()">Añadir</button>
+          <button *ngIf='unidad!=undefined' class="btn btn-dark" type="submit" (click)="editarUnidades()">Editar</button>
+        </div>
+  </div>
+</form>

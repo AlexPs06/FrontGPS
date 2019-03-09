@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+/* *{
+    overflow-x: hidden;
+} */
+.text-main{
+    font-weight: bold;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.inputs input{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}

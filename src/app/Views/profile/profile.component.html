@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div *ngIf="exitsData" class="alert alert-success" role="alert">Datos obtenidos exitosamente</div>
+<div *ngIf="!exitsData" class="alert alert-danger" role="alert">No se pudieron obtener los datos deseados</div>
+<div class="row">
+  <div class="offset-md-9"><a  class="btn btn-outline-dark text-add" href="/dashboard/profile">Añadir nuevo perfil</a></div>
+</div>
+<br>
+<div *ngIf="exitsData == true" class="row justify-content-center">
+  <div class="col-9">
+      <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Address</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Email</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let dato of datos" >
+                <th scope="row">{{ dato.id }}</th>
+                <td>{{dato.Address}}</td>
+                <td>{{dato.Phone}}</td>
+                <td>{{dato.Edad}}</td>
+                <td>{{dato.Email}}</td>
+                <td>
+                  <button class="btn btn-outline-dark text-add" style="margin-right:20px" type="submit" (click)="editarProfile(dato)"><i class="far fa-edit"></i></button>
+                  <button class="btn btn-outline-dark text-add" style="margin-right:20px  " type="submit" (click)="eliminarProfile(dato)"><i class="fas fa-trash-alt"></i></button>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+  </div>
+</div>
+<div *ngIf="exitsData == false">
+  <div class="row">
+    <div class="col-12">
+      <p class="text-center"><strong style="font-size: 20px;">Sin datos que mostrar</strong></p>
+    </div>
+  </div>
+</div>
